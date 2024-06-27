@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingo Game</title>
+    <link rel="stylesheet" type="text/css" href="client.css">
+</head>
+
+<body>
+    <header>
+        <h1 id="title">　　Bingo Game Online</h1>
+    </header>
+    <div id="layout">
+        <div id="selectPage">
+            <button id="newName">隨機生成名稱</button>
+            <button id="createRoom">建立房間</button>
+            <button id="joinRoom">加入房間</button>
+            <button id="newCard">隨機生成賓果卡</button>
+            <button id="ready" disabled>開始遊戲</button>
+            <br>
+
+            <div id="notice">
+                <h3>遊戲說明</h3>
+                <br>
+                <p>
+                    1.輸入/隨機生成名稱
+                    <br>
+                    2.建立房間/輸入房號加入房間
+                    <br>
+                    3.由開房者開始遊戲
+                    <br>
+                    4.輪流選擇號碼
+                    <br>
+                    5.先連成一條線的玩家獲勝
+                </p>
+            </div>
+            <hr>
+
+            <button id="again" disabled>重新開始</button>
+        </div>
+
+        <div id="gamePage">
+            <span>玩家名稱：</span>
+            <input type="text" id="playerName" placeholder="在此填入你的名稱">
+            <br>
+            <span>房間編號：</span>
+            <input type="text" id="roomNumber" placeholder="加入房間請填編號" maxlength="4">
+            <br>
+            <div id="bingoCard">
+                <div id="design">
+                    <h1 id="cardTitle">BINGO!</h1>
+                </div>
+                <div class="randomNumbersContainer" id="cardCotainer"></div>
+            </div>
+        </div>
+
+        <div id="serverPage">
+            <span>目前同房人數：</span>
+            <input id="playerNumber" placeholder="尚未加入房間" disabled>
+            <hr>
+            <span>現在開獎號碼：</span>
+            <input id="nowNumber" placeholder="還沒有數字" disabled>
+            <br>
+            <div class="bingoNumbersContainer" id="bingoCotainer"></div>
+            <hr>
+            <span>系統訊息：</span>
+            <input disabled>
+            <div id="serverLog">
+            </div>
+            <hr>
+        </div>
+    </div>
+
+    <script src="client.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,244 @@
+/* -----------------通用設定----------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
+}
+
+button:active {
+  opacity: .5;
+}
+
+input {
+  height: 40px;
+  padding: 6px 6px;
+  font-size: 15px;
+  border-width: 0px;
+  outline: none;
+  margin: 10px;
+  transition: 0.4s;
+}
+
+input:hover {
+  border-color: rgb(117, 117, 117);
+}
+
+/* 頁首 */
+header {
+  background-color: rgb(199, 199, 199);
+  font-family: monospace;
+  height: 50px;
+}
+
+#title {
+  text-align: left;
+  line-height: 50px;
+}
+
+/* 排版用 */
+#layout {
+  display: flex;
+}
+
+/* -----------------左邊選項區域----------------- */
+#selectPage {
+  width: 40vh;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  background-color: #3a3a3a;
+  font-family: Monospace;
+
+}
+
+#newName,
+#createRoom,
+#joinRoom,
+#newCard,
+#ready,
+#again {
+  width: 100%;
+  padding: 12px 48px;
+  font-size: 15px;
+  color: #fff;
+  background-color: #3a3a3a;
+  border-bottom-color: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#newName:hover,
+#createRoom:hover,
+#joinRoom:hover,
+#newCard:hover,
+#ready:hover,
+#again:hover {
+  background-color: gray;
+}
+
+#notice {
+  padding: 20px 50px;
+  width: 100%;
+  color: #cbcbcb;
+  text-align: left;
+}
+
+/* 按下時樣式，只在未禁用狀態下有效 */
+#newName:not(:disabled):active,
+#createRoom:not(:disabled):active,
+#joinRoom:not(:disabled):active,
+#newCard:not(:disabled):active,
+#ready:not(:disabled):active,
+#again:not(:disabled):active {
+  opacity: 0.5;
+}
+
+/* 禁用狀態下樣式 */
+#newName:disabled,
+#createRoom:disabled,
+#joinRoom:disabled,
+#newCard:disabled,
+#ready:disabled,
+#again:disabled {
+  color: rgb(138, 138, 138);
+  /* 改變禁用狀態下的背景顏色 */
+  cursor: not-allowed;
+}
+
+/* -----------------中間卡片區域----------------- */
+
+#gamePage {
+  width: 60vh;
+  height: 100%;
+  padding: 20px 40px;
+  margin: 0 auto;
+}
+
+#bingoCard {
+  padding: 20px 0px;
+  width: 370px;
+}
+
+/* 卡片的橫條 */
+#design {
+  width: 370px;
+  height: 110px;
+  border-radius: 5px 5px 0px 0px;
+  background-color: #dc685a;
+}
+
+#cardTitle {
+  color: goldenrod;
+  height: 110px;
+  line-height: 110px;
+  font-size: 70px;
+  font-family: Papyrus;
+  text-shadow: 3px 3px 1px white;
+}
+
+/* 放數字的地方 */
+.randomNumbersContainer {
+  margin-bottom: 15px;
+  border-radius: 5px;
+  width: 370px;
+  height: 340px;
+  border-radius: 0px 0px 5px 5px;
+  border: 2px solid #dc685a;
+  background-color: #dc685a;
+  display: grid;
+  justify-content: center;
+  grid-auto-rows: auto;
+  grid-gap: 0;
+}
+
+.randomNumbersContainer>*:nth-child(n+2) {
+  margin-top: -5px;
+  /* 將第二行以後的物件上移一個像素 */
+}
+
+/* 賓果卡數字按鈕 */
+.randomNumber {
+  font-size: 25px;
+  font-family: monospace;
+  width: 60px;
+  height: 60px;
+  transform: scale(0);
+  line-height: 40px;
+  margin: 2px;
+  border-radius: 20px;
+  float: left;
+  color: black;
+  border: 2px solid #dc685a;
+  cursor: pointer;
+  text-shadow: 1px 0px 0px white, -1px 0px 0px white, 0px 1px 0px white, 0px -1px 0px white;
+  transition: 0.4s;
+}
+
+.randomNumber:hover {
+  background-color: gray;
+}
+
+.bg-blue {
+  background-color: rgb(75, 138, 209);
+}
+
+/* -----------------右邊開獎區域----------------- */
+#serverPage {
+  width: 52vh;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  background-color: #e8e8e8;
+  font-family: Monospace;
+}
+
+.bingoNumbersContainer {
+  margin-bottom: 15px;
+  border-radius: 5px;
+  width: 100%;
+  height: 60px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+#serverLog {
+  padding: 20px 50px;
+  height: 300px;
+  width: 100%;
+  color: #073167;
+  text-align: left;
+  overflow-y: auto;
+}
+
+/* -----------------共用樣式----------------- */
+
+.bingoNumber {
+  font-size: 20px;
+  font-family: monospace;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50px;
+  margin: 5px 5px;
+  color: black;
+  background-color: white;
+  box-shadow: 0px 0px 5px gray;
+  transform: scale(0);
+  transition: 0.4s;
+  display: inline-block;
+}
+
+/* 賓果卡數字動畫 */
+.expand {
+  transform: scale(1);
+}
